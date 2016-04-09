@@ -1,0 +1,41 @@
+{
+    "disease_name":"GlucoSuccess",
+    "from_date":"December 2014",
+    "to_date":"December 2015",
+    "logo_name": "logo_research_institute",
+    "questions":
+    [
+     {
+     "title":"Welcome to GlucoSuccess",
+     "details":"A Diabetes Research Study",
+     "show_consent": "yes"
+     },
+
+/*
+"Read Consent Document" is defined in skin/ui/Views/OnboardingActivity.java
+What about "Email Consent Document" ?
+ */
+
+    {
+     "title":"About this Study",
+     "details":"study_overview_about_intro",
+     "icon_image":"paperplus_icon",
+     "tint_color" : "blue"
+     },
+     
+     {
+     "title":"How this Study works",
+     "details":"study_overview_howstudyworks_intro",
+     "icon_image":"rulerpencil_icon",
+     "tint_color" : "red"
+     }
+/*
+     {
+     "title":"Who is Eligible to Participate",
+     "details":"EligibleToParticipate_intro",
+     "icon_image":"clipboard_icon",
+     "tint_color" : "green"
+     }
+*/
+     ]
+}
