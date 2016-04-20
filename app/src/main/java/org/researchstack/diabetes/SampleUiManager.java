@@ -1,5 +1,6 @@
 package org.researchstack.diabetes;
 import android.content.Context;
+
 import org.researchstack.backbone.answerformat.AnswerFormat;
 import org.researchstack.backbone.answerformat.ChoiceAnswerFormat;
 import org.researchstack.backbone.answerformat.BooleanAnswerFormat;
@@ -32,13 +33,13 @@ public class SampleUiManager extends UiManager
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_activities)
                 .setTitle(R.string.rss_activities)
-                .setIcon(R.drawable.ic_tab_activities)
+                .setIcon(R.drawable.rss_ic_tab_activities)
                 .setClass(ActivitiesFragment.class)
                 .build());
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_dashboard)
                 .setTitle(R.string.rss_dashboard)
-                .setIcon(R.drawable.ic_tab_dashboard)
+                .setIcon(R.drawable.rss_ic_tab_dashboard)
                 .setClass(DashboardFragment.class)
                 .build());
 
@@ -57,13 +58,13 @@ public class SampleUiManager extends UiManager
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_learn)
                 .setTitle(R.string.rss_learn)
-                .setIcon(R.drawable.ic_action_info)
+                .setIcon(R.drawable.rss_ic_action_learn)
                 .setClass(LearnActivity.class)
                 .build());
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_settings)
                 .setTitle(R.string.rss_settings)
-                .setIcon(R.drawable.ic_action_settings)
+                .setIcon(R.drawable.rss_ic_action_settings)
                 .setClass(SampleSettingsActivity.class)
                 .build());
 
@@ -81,7 +82,7 @@ public class SampleUiManager extends UiManager
     @Override
     public Step getInclusionCriteriaStep(Context context)
     {
-        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat();
+        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat("true","false");
 
         QuestionStep ageStep = new QuestionStep("signupInclusionAgeStep",
                 "Are you over 18 years of age?",
@@ -142,12 +143,6 @@ public class SampleUiManager extends UiManager
             return true;
         }
         return false;
-    }
-
-    @Override
-    public boolean isSignatureEnabledInConsent()
-    {
-        return true;
     }
 
     @Override

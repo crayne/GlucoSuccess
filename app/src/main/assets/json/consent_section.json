@@ -7,7 +7,10 @@
         "htmlDocument" : "diabetes_fullconsent",
         "investigatorShortDescription": "The GlucoSuccess team",
         "investigatorLongDescription": "The GlucoSuccess team",
-        "htmlContent": "consent_section_html_sharing_rsch"
+        "htmlContent": "consent_section_html_sharing_rsch",
+        "requiresSignature": true,
+        "requiresName": true,
+        "requiresBirthdate": true
     },
     "sections":
     [

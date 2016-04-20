@@ -29,7 +29,7 @@ public class SampleTaskProvider extends TaskProvider
     public SampleTaskProvider(Context context)
     {
         put(TASK_ID_INITIAL, createInitialTask(context));
-        put(TASK_ID_CONSENT, ConsentTask.createConsentTask(context, TASK_ID_CONSENT));
+        put(TASK_ID_CONSENT, ConsentTask.create(context, TASK_ID_CONSENT));
         put(TASK_ID_SIGN_IN, new SignInTask(context));
         put(TASK_ID_SIGN_UP, new SignUpTask(context));
     }
@@ -49,7 +49,6 @@ public class SampleTaskProvider extends TaskProvider
     private Task createInitialTask(Context context)
     {
         List<Step> steps = new ArrayList<>();
-
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
         // Intro step
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -156,7 +155,6 @@ public class SampleTaskProvider extends TaskProvider
         // Eye and Hair color form step
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
-
         FormStep hairEyesForm = new FormStep("hairEyesInfo", "Natural Hair and Eye Color", "");
         hairEyesForm.setStepTitle(R.string.task_inital_toolbar_title);
 
@@ -208,7 +206,8 @@ public class SampleTaskProvider extends TaskProvider
         FormStep medicalInfoForm = new FormStep("medicalInfo", "Medical Information", "");
         medicalInfoForm.setStepTitle(R.string.task_inital_toolbar_title);
 
-        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat();
+        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat(context.getString(R.string.rsb_yes),
+                context.getString(R.string.rsb_no));
 
         QuestionStep robotStep = new QuestionStep("confirmRobot",
                 "Are you a robot?",
@@ -239,6 +238,5 @@ public class SampleTaskProvider extends TaskProvider
         steps.add(thankYouStep);
 
         return new OrderedTask(TASK_ID_INITIAL, steps);
-
     }
 }

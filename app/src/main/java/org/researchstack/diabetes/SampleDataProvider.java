@@ -1,12 +1,12 @@
 package org.researchstack.diabetes;
 import android.content.Context;
 
+import org.researchstack.backbone.ResourcePathManager;
 import org.researchstack.backbone.result.TaskResult;
-import org.researchstack.bridge.BridgeDataProvider;
+import org.researchstack.diabetes.bridge.BridgeDataProvider;
+import org.researchstack.skin.ResourceManager;
 
-/**
- * Created by bradleymcdermott on 3/8/16.
- */
+
 public class SampleDataProvider extends BridgeDataProvider
 {
     public SampleDataProvider()
@@ -21,32 +21,32 @@ public class SampleDataProvider extends BridgeDataProvider
     }
 
     @Override
-    protected int getPublicKeyResId()
+    protected ResourcePathManager.Resource getPublicKeyResId()
     {
-        return R.raw.bridge_key;
+        return new SampleResourceManager.PemResource("bridge_key");
     }
 
     @Override
-    protected int getTasksAndSchedulesResId()
+    protected ResourcePathManager.Resource getTasksAndSchedules()
     {
-        return R.raw.tasks_and_schedules;
+        return ResourceManager.getInstance().getTasksAndSchedules();
     }
 
     @Override
     protected String getBaseUrl()
     {
-        return "https://webservices-staging.sagebridge.org/";
+        return BuildConfig.STUDY_BASE_URL;
     }
 
     @Override
     protected String getStudyId()
     {
-        return "ohsu-molemapper";
+        return BuildConfig.STUDY_ID;
     }
 
     @Override
     protected String getUserAgent()
     {
-        return "Mole Mapper/" + BuildConfig.VERSION_CODE;
+        return BuildConfig.STUDY_NAME + "/" + BuildConfig.VERSION_CODE;
     }
 }

@@ -9,12 +9,13 @@ import org.researchstack.backbone.storage.database.sqlite.SqlCipherDatabaseHelpe
 import org.researchstack.backbone.storage.database.sqlite.UpdatablePassphraseProvider;
 import org.researchstack.backbone.storage.file.EncryptionProvider;
 import org.researchstack.backbone.storage.file.FileAccess;
+import org.researchstack.backbone.storage.file.PinCodeConfig;
 import org.researchstack.backbone.storage.file.SimpleFileAccess;
 import org.researchstack.backbone.storage.file.aes.AesProvider;
-import org.researchstack.backbone.storage.file.auth.PinCodeConfig;
-import org.researchstack.bridge.BridgeEncryptedDatabase;
+import org.researchstack.diabetes.bridge.BridgeEncryptedDatabase;
 import org.researchstack.skin.AppPrefs;
 import org.researchstack.skin.DataProvider;
+import org.researchstack.skin.PermissionRequestManager;
 import org.researchstack.skin.ResearchStack;
 import org.researchstack.skin.ResourceManager;
 import org.researchstack.skin.TaskProvider;
@@ -85,4 +86,9 @@ public class SampleResearchStack extends ResearchStack
         return new SimpleNotificationConfig();
     }
 
+    @Override
+    protected PermissionRequestManager createPermissionRequestManagerImplementation(Context context)
+    {
+        return new SamplePermissionResultManager();
+    }
 }
