@@ -1,0 +1,55 @@
+{
+  "identifier": "DiabetesDailyCheck",
+  "type": "Survey",
+  "name": "DiabetesDailyCheck",
+  "elements": [
+    {
+      "identifier": "hours_of_sleep",
+      "prompt": "How many hours of sleep did you get last night?",
+      "uiHint": "numberfield",
+      "guid": "e27b4728-32e7-4066-985a-bee71e2580c3",
+      "type": "SurveyQuestion",
+      "constraints": {
+        "dataType": "integer",
+        "step": null,
+        "type": "IntegerConstraints",
+        "maxValue": 24,
+        "minValue": 0
+      }
+    },
+   {
+      "identifier": "check_feet",
+      //"promptDetail": "It is important for diabetics to inspect your feet every day, and remember to seek care early if you do get a foot injury - and remember to seek care early if you see cuts or breaks in the skin, blisters, red spots, an ingrown nail, or if your foot feels painful, unusually warm or cold, or just different",
+      "prompt": "Did you check your feet today?",
+      "uiHint": "MultiValueConstraints",
+      "guid": "1897590f-7355-443c-b844-158d4b0b61cd",
+      "type": "SurveyQuestion",
+      "constraints": {
+        "dataType": "integer",
+        "type": "MultiValueConstraints",
+        "enumeration": [
+          {
+            "type": "SurveyQuestionOption",
+            "value": 1,
+            "label": "I checked and found no problems"
+          },
+          {
+            "type": "SurveyQuestionOption",
+            "value": 2,
+            "label": "I checked and found some problems, so I sought care"
+          },
+          {
+            "type": "SurveyQuestionOption",
+            "value": 3,
+            "label": "I checked and found some problems, but did not seek care"
+          },
+          {
+            "type": "SurveyQuestionOption",
+            "value": 4,
+            "label": "I did not check my feet today"
+          }
+        ]
+      }
+    }
+  ]
+}
