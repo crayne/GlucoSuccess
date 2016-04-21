@@ -13,6 +13,20 @@
         }
       ]
     },
+
+    //This is the first Diabetes survey task.  It uses the old practice_survey.json file
+    {
+      "scheduleType": "recurring",
+      "scheduleString": "* * * * *",
+      "tasks": [
+        {
+          "taskTitle": "Daily Check",
+          "taskID": "DailyCheck-1234",
+          "taskFileName": "practice_survey",
+          "taskCompletionTimeString": "3 Questions"
+        }
+      ]
+    },
     {
       "scheduleType": "recurring",
       "scheduleString": "* * * * *",
