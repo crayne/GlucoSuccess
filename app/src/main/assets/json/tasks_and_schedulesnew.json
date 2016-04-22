@@ -2,14 +2,27 @@
   "schedules": [
     {
       "scheduleType": "once",
-      "delay": "P3D",
       "tasks": [
         {
           "taskTitle": "Activity Tracker",
-          "taskID": "AboutYou-27829fa5-d731-4372-ba30-a5859f688297",
+          "taskID": "ActivityTracker-27829fa5-d731-4372-ba30-a5859f688297",
           "taskFileName": "activity_tracker",
-          "taskClassName": "APHDailyTaskViewController",
-          "taskCompletionTimeString": "8 Questions"
+          "taskCompletionTimeString": "1 Questions"
+
+        }
+      ]
+    },
+
+    //This is the first Diabetes survey task.  It uses the old practice_survey.json file
+    {
+      "scheduleType": "recurring",
+      "scheduleString": "* * * * *",
+      "tasks": [
+        {
+          "taskTitle": "Daily Check",
+          "taskID": "DailyCheck-27829fa5-d731-4372-ba30-a5859f655297",
+          "taskFileName": "daily_check",
+          "taskCompletionTimeString": "2 Questions"
         }
       ]
     },
@@ -21,7 +34,7 @@
           "taskTitle": "Test Survey",
           "taskID": "1c5ee4e2-baab-47db-b515-2fbe9fdf50a6",
           "taskFileName": "practice_survey",
-          "taskCompletionTimeString": "4 Questions"
+          "taskCompletionTimeString": "3 Questions"
         }
       ]
     },
@@ -30,11 +43,11 @@
       "scheduleString": "0 5 * * *",
       "tasks": [
         {
-          "taskTitle": "Daily Check",
+          "taskTitle": "Daily Survey",
           "taskID": "DailyPrompt-27829fa5-d731-4372-ba30-a5859f655297",
-          "taskFileName": "daily_check",
+          "taskFileName": "asthma_daily_prompt",
           "taskClassName": "APHDailyTaskViewController",
-          "taskCompletionTimeString": "2 Questions"
+          "taskCompletionTimeString": "8 Questions"
         }
       ]
     },
