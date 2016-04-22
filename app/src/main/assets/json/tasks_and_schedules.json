@@ -9,22 +9,11 @@
           "taskID": "AboutYou-27829fa5-d731-4372-ba30-a5859f688297",
           "taskFileName": "activity_tracker",
           "taskClassName": "APHDailyTaskViewController",
-          "taskCompletionTimeString": "8 Questions"
+          "taskCompletionTimeString": "1 Question"
         }
       ]
     },
-    {
-      "scheduleType": "recurring",
-      "scheduleString": "* * * * *",
-      "tasks": [
-        {
-          "taskTitle": "Test Survey",
-          "taskID": "1c5ee4e2-baab-47db-b515-2fbe9fdf50a6",
-          "taskFileName": "practice_survey",
-          "taskCompletionTimeString": "4 Questions"
-        }
-      ]
-    },
+
     {
       "scheduleType": "recurring",
       "scheduleString": "0 5 * * *",
