@@ -913,6 +913,7 @@ public abstract class BridgeDataProvider extends DataProvider
          */
         @Headers("Content-Type: application/json")
         @POST("v3/auth/signUp")
+
         Observable<BridgeMessageResponse> signUp(@Body SignUpBody body);
 
         /**

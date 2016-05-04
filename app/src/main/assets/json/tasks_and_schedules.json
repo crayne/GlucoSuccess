@@ -34,9 +34,9 @@
         {
           "taskTitle": "Weekly Survey",
           "taskID": "WeeklySurvey-b573a78-8917-4582-8f1f-0552d0bfd28a",
-          "taskFileName": "asthma_weekly",
+          "taskFileName": "diabetes_weekly_survey",
           "taskClassName": "APHWeeklyTaskViewController",
-          "taskCompletionTimeString": "16 Questions"
+          "taskCompletionTimeString": "2 Questions"
         }
       ]
     },
@@ -45,11 +45,11 @@
       "delay": "P4D",
       "tasks": [
         {
-          "taskTitle": "Medical History",
+          "taskTitle": "Baseline Survey",
           "taskID": "MedicalHistory-b3cd0d66-b943-11e4-a71e-12e3f512a338",
-          "taskFileName": "medical_history",
+          "taskFileName": "diabetes_baseline_survey",
           "taskClassName": "APCGenericSurveyTaskViewController",
-          "taskCompletionTimeString": "17 Questions"
+          "taskCompletionTimeString": "27 Questions"
         }
       ]
     },
