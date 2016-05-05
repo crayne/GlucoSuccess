@@ -1,7 +1,7 @@
 {
-    "identifier": "weight",
+    "identifier": "baseline",
     "type": "Survey",
-    "name": "WeightMeasurement",
+    "name": "Baseline Survey",
     "elements": [
         
         {  
