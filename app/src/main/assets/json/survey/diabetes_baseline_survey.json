@@ -381,6 +381,7 @@
                 "type": "BooleanConstraints"
             }
         },
+
         {
             "guid": "824cff10-3b2f-49c2-8c43-17b72287819a",
             "identifier": "med1_select",
@@ -613,6 +614,7 @@
             },
             "uiHint": "radiobutton"
         },
+        /* Original dataType was decimal, and type was DecimalConstraints, but these are not implemented */
         {
             "guid": "db8d54db-c00e-4203-af71-2701253aa9e9",
             "identifier": "med1_dose",
@@ -620,13 +622,14 @@
             "prompt": "What is your main medicine usual dose?",
             "detail": "Enter your dose in mg (or in units for Insulin)",
             "constraints": {
-                "dataType": "decimal",
+                "dataType": "integer",
                 "rules": [],
                 "minValue": 0,
-                "type": "DecimalConstraints"
+                "type": "IntegerConstraints"
             },
             "uiHint": "numberfield"
         },
+
         {
             "guid": "824cff10-3b2f-49c2-8c43-17b79997819a",
             "identifier": "med1_freq",
@@ -674,6 +677,7 @@
             },
             "uiHint": "radiobutton"
         },
+
         {
             "guid": "824cff10-3b2f-49c2-8c43-17b79997819a",
             "identifier": "med1_type",
