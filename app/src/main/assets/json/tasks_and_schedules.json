@@ -55,15 +55,15 @@
     },
 
     {
-      "scheduleType": "once",
-      "delay": "P4D",
+      "scheduleType": "recurring",
+      "scheduleString": "* * * * *",
       "tasks": [
         {
           "taskTitle": "Weight Measurement",
           "taskID": "WeightMeasurement-c2379e84-b943-11e4-a71e-12e3f512a338",
           "taskFileName": "diabetes_weight_measurement",
           "taskClassName": "APCGenericSurveyTaskViewController",
-          "taskCompletionTimeString": "27 Questions"
+          "taskCompletionTimeString": "3 Questions"
         }
       ]
     },

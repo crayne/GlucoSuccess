@@ -32,6 +32,8 @@ import org.researchstack.diabetes.bridge.body.SignInBody;
 import org.researchstack.diabetes.bridge.body.SignUpBody;
 import org.researchstack.diabetes.bridge.body.SurveyAnswer;
 import org.researchstack.diabetes.bridge.body.WithdrawalBody;
+import org.researchstack.diabetes.task.DiabetesSmartSurveyTask;
+
 import org.researchstack.skin.AppPrefs;
 import org.researchstack.skin.DataProvider;
 import org.researchstack.skin.DataResponse;
@@ -42,7 +44,6 @@ import org.researchstack.skin.model.User;
 import org.researchstack.skin.notification.TaskAlertReceiver;
 import org.researchstack.skin.schedule.ScheduleHelper;
 import org.researchstack.skin.task.ConsentTask;
-import org.researchstack.skin.task.SmartSurveyTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -584,7 +585,7 @@ public abstract class BridgeDataProvider extends DataProvider
         }
 
         TaskModel taskModel = loadTaskModel(context, task);
-        SmartSurveyTask smartSurveyTask = new SmartSurveyTask(context, taskModel);
+        DiabetesSmartSurveyTask smartSurveyTask = new DiabetesSmartSurveyTask(context, taskModel);
         return smartSurveyTask;
     }
 
@@ -610,6 +611,8 @@ public abstract class BridgeDataProvider extends DataProvider
 
         for(StepResult stepResult : taskResult.getResults().values())
         {
+            //Test for missing step result (e.g. when type is SurveyTextOnly)
+            if (stepResult == null) return;
             SurveyAnswer surveyAnswer = SurveyAnswer.create(stepResult);
             files.add(new BridgeDataInput(surveyAnswer,
                     SurveyAnswer.class,
