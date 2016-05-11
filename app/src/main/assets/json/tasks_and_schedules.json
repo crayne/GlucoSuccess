@@ -56,7 +56,7 @@
 
     {
       "scheduleType": "recurring",
-      "scheduleString": "* * * * *",
+      "scheduleString": "0 5 * * *",
       "tasks": [
         {
           "taskTitle": "Weight Measurement",
