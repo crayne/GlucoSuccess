@@ -32,7 +32,7 @@ import org.researchstack.diabetes.bridge.body.SignInBody;
 import org.researchstack.diabetes.bridge.body.SignUpBody;
 import org.researchstack.diabetes.bridge.body.SurveyAnswer;
 import org.researchstack.diabetes.bridge.body.WithdrawalBody;
-import org.researchstack.diabetes.task.DiabetesSmartSurveyTask;
+import org.researchstack.skin.task.SmartSurveyTask;
 
 import org.researchstack.skin.AppPrefs;
 import org.researchstack.skin.DataProvider;
@@ -585,7 +585,7 @@ public abstract class BridgeDataProvider extends DataProvider
         }
 
         TaskModel taskModel = loadTaskModel(context, task);
-        DiabetesSmartSurveyTask smartSurveyTask = new DiabetesSmartSurveyTask(context, taskModel);
+        SmartSurveyTask smartSurveyTask = new SmartSurveyTask(context, taskModel);
         return smartSurveyTask;
     }
 

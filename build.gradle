@@ -1,8 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
         jcenter()
         maven { url 'https://maven.fabric.io/public' }
     }
@@ -24,6 +26,9 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
         maven { url "http://dl.bintray.com/bmcd87/Squeaky" }
+        maven {
+            url "/Users/susancrayne/.m2/repository/"
+        }
     }
 }
 
