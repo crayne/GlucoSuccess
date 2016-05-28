@@ -5,10 +5,15 @@ import java.util.List;
 import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 import android.content.Context;
+
+import com.google.gson.Gson;
+
 import rx.Observable;
 import rx.Subscriber;
 
 
+import org.researchstack.backbone.storage.file.StorageAccessException;
+import org.researchstack.diabetes.bridge.UserSessionInfo;
 import org.researchstack.skin.task.SmartSurveyTask;
 import org.researchstack.backbone.storage.database.AppDatabase;
 import org.researchstack.backbone.result.TaskResult;
@@ -30,6 +35,15 @@ import org.researchstack.skin.schedule.ScheduleHelper;
  * Created by Dario Salvi on 01/03/2016.
  */
 public class SampleDataProvider extends DataProvider {
+    public static final String TEMP_CONSENT_JSON_FILE_NAME = "/consent_sig";
+    public static final String USER_SESSION_PATH           = "/user_session";
+    public static final String USER_PATH                   = "/user";
+
+    protected UserSessionInfo userSessionInfo;
+    protected Gson gson     = new Gson();
+    protected static boolean signedIn = false;
+
+
 
     Observable<DataResponse> obs;
 
@@ -55,6 +69,7 @@ public class SampleDataProvider extends DataProvider {
     @Override
     public Observable<DataResponse> signIn(Context context, String s, String s1) {
         LogExt.i(SampleDataProvider.class, "User signing in");
+        signedIn = true;
         return obs;
     }
 
@@ -72,17 +87,19 @@ public class SampleDataProvider extends DataProvider {
 
     @Override
     public boolean isSignedUp(Context context) {
-        return false;
-    }
+        User user = loadUser(context);
+        return user != null && user.getEmail() != null;    }
 
     @Override
     public boolean isSignedIn(Context context) {
-        return false;
+        return signedIn;
     }
 
     @Override
     public boolean isConsented(Context context) {
-        return false;
+        return userSessionInfo.isConsented() || StorageAccess.getInstance()
+                .getFileAccess()
+                .dataExists(context, TEMP_CONSENT_JSON_FILE_NAME);
     }
 
     @Override
@@ -109,6 +126,24 @@ public class SampleDataProvider extends DataProvider {
         dummyUser.setBirthDate("22/10/1974");
 
         return dummyUser;
+    }
+
+    private User loadUser(Context context)
+    {
+        try
+        {
+            String user = loadJsonString(context, USER_PATH);
+            return gson.fromJson(user, User.class);
+        }
+        catch(StorageAccessException e)
+        {
+            return null;
+        }
+    }
+
+    private String loadJsonString(Context context, String path)
+    {
+        return new String(StorageAccess.getInstance().getFileAccess().readData(context, path));
     }
 
     @Override
