@@ -10,7 +10,7 @@
         "htmlContent": "consent_section_html_sharing_rsch",
         "requiresSignature": true,
         "requiresName": true,
-        "requiresBirthdate": true
+        "requiresBirthdate": false
     },
     "sections":
     [
