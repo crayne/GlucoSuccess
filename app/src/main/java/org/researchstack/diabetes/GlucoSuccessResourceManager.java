@@ -2,7 +2,6 @@ package org.researchstack.diabetes;
 import android.text.TextUtils;
 
 import org.researchstack.backbone.ResourcePathManager;
-import org.researchstack.backbone.ResourcePathManager.Resource;
 
 import org.researchstack.skin.ResourceManager;
 import org.researchstack.skin.model.ConsentSectionModel;
@@ -11,7 +10,7 @@ import org.researchstack.skin.model.SectionModel;
 import org.researchstack.skin.model.StudyOverviewModel;
 import org.researchstack.skin.model.TaskModel;
 
-public class SampleResourceManager extends ResourceManager
+public class GlucoSuccessResourceManager extends ResourceManager
 {
     private static final String BASE_PATH_HTML        = "html";
     private static final String BASE_PATH_JSON        = "json";
@@ -142,7 +141,7 @@ public class SampleResourceManager extends ResourceManager
 
         public PemResource(String name)
         {
-            super(SampleResourceManager.PEM, null, name);
+            super(GlucoSuccessResourceManager.PEM, null, name);
         }
     }
 }

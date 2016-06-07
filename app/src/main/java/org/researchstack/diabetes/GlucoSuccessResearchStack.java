@@ -23,7 +23,7 @@ import org.researchstack.skin.UiManager;
 import org.researchstack.skin.notification.NotificationConfig;
 import org.researchstack.skin.notification.SimpleNotificationConfig;
 
-public class SampleResearchStack extends ResearchStack
+public class GlucoSuccessResearchStack extends ResearchStack
 {
 
     @Override
@@ -59,25 +59,25 @@ public class SampleResearchStack extends ResearchStack
     @Override
     protected ResourceManager createResourceManagerImplementation(Context context)
     {
-        return new SampleResourceManager();
+        return new GlucoSuccessResourceManager();
     }
 
     @Override
     protected UiManager createUiManagerImplementation(Context context)
     {
-        return new SampleUiManager();
+        return new GlucoSuccessUiManager();
     }
 
     @Override
     protected DataProvider createDataProviderImplementation(Context context)
     {
-        return new SampleDataProvider();
+        return new GlucoSuccessDataProvider();
     }
 
     @Override
     protected TaskProvider createTaskProviderImplementation(Context context)
     {
-        return new SampleTaskProvider(context);
+        return new GlucoSuccessTaskProvider(context);
     }
 
     @Override
@@ -89,6 +89,6 @@ public class SampleResearchStack extends ResearchStack
     @Override
     protected PermissionRequestManager createPermissionRequestManagerImplementation(Context context)
     {
-        return new SamplePermissionResultManager();
+        return new GlucoSuccessPermissionResultManager();
     }
 }

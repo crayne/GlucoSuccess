@@ -7,7 +7,7 @@ import android.support.v7.preference.PreferenceScreen;
 import org.researchstack.diabetes.BuildConfig;
 import org.researchstack.skin.ui.fragment.SettingsFragment;
 
-public class SampleSettingsFragment extends SettingsFragment
+public class GlucoSuccessSettingsFragment extends SettingsFragment
 {
     public static final String KEY_EXAMPLE = "Sample.EXAMPLE";
 

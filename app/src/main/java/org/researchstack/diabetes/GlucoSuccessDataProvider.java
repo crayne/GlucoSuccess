@@ -34,7 +34,7 @@ import org.researchstack.skin.schedule.ScheduleHelper;
  * A dummy server implementation
  * Created by Dario Salvi on 01/03/2016.
  */
-public class SampleDataProvider extends DataProvider {
+public class GlucoSuccessDataProvider extends DataProvider {
     public static final String TEMP_CONSENT_JSON_FILE_NAME = "/consent_sig";
     public static final String USER_SESSION_PATH           = "/user_session";
     public static final String USER_PATH                   = "/user";
@@ -62,26 +62,26 @@ public class SampleDataProvider extends DataProvider {
 
     @Override
     public Observable<DataResponse> signUp(Context context, String s, String s1, String s2) {
-        LogExt.i(SampleDataProvider.class, "User signing up");
+        LogExt.i(GlucoSuccessDataProvider.class, "User signing up");
         return obs;
     }
 
     @Override
     public Observable<DataResponse> signIn(Context context, String s, String s1) {
-        LogExt.i(SampleDataProvider.class, "User signing in");
+        LogExt.i(GlucoSuccessDataProvider.class, "User signing in");
         signedIn = true;
         return obs;
     }
 
     @Override
     public Observable<DataResponse> signOut(Context context) {
-        LogExt.i(SampleDataProvider.class, "User signing out");
+        LogExt.i(GlucoSuccessDataProvider.class, "User signing out");
         return obs;
     }
 
     @Override
     public Observable<DataResponse> resendEmailVerification(Context context, String s) {
-        LogExt.i(SampleDataProvider.class, "User asking to resend email");
+        LogExt.i(GlucoSuccessDataProvider.class, "User asking to resend email");
         return obs;
     }
 
@@ -104,18 +104,18 @@ public class SampleDataProvider extends DataProvider {
 
     @Override
     public Observable<DataResponse> withdrawConsent(Context context, String reason) {
-        LogExt.i(SampleDataProvider.class, "Withdrawing consent");
+        LogExt.i(GlucoSuccessDataProvider.class, "Withdrawing consent");
         return obs;
     }
 
     @Override
     public void uploadConsent(Context context, TaskResult consentResult) {
-        LogExt.i(SampleDataProvider.class, "Consent uploaded");
+        LogExt.i(GlucoSuccessDataProvider.class, "Consent uploaded");
     }
 
     @Override
     public void saveConsent(Context context, TaskResult consentResult) {
-        LogExt.i(SampleDataProvider.class, "Consent saved");
+        LogExt.i(GlucoSuccessDataProvider.class, "Consent saved");
     }
 
     @Override
@@ -175,7 +175,7 @@ public class SampleDataProvider extends DataProvider {
         for (SchedulesAndTasksModel.ScheduleModel schedule : schedulesAndTasksModel.schedules) {
 
             SchedulesAndTasksModel.TaskScheduleModel task = schedule.tasks.get(0);
-            LogExt.d(SampleDataProvider.class, "Loading task " + task.taskClassName);
+            LogExt.d(GlucoSuccessDataProvider.class, "Loading task " + task.taskClassName);
 
             String resultstaskid = null;
 
@@ -216,7 +216,7 @@ public class SampleDataProvider extends DataProvider {
         }
         */
         else {
-            LogExt.e(SampleDataProvider.class, "Task with classname " + task.taskClassName + "cannot be found");
+            LogExt.e(GlucoSuccessDataProvider.class, "Task with classname " + task.taskClassName + "cannot be found");
             return null;
         }
     }
@@ -229,7 +229,7 @@ public class SampleDataProvider extends DataProvider {
 
     @Override
     public Observable<DataResponse> forgotPassword(Context context, String email) {
-        LogExt.i(SampleDataProvider.class, "Forgot password");
+        LogExt.i(GlucoSuccessDataProvider.class, "Forgot password");
         return obs;
     }
 

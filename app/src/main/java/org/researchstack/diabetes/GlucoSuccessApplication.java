@@ -9,7 +9,7 @@ import android.support.multidex.MultiDex;
 import org.researchstack.skin.PermissionRequestManager;
 import org.researchstack.skin.ResearchStack;
 
-public class SampleApplication extends Application
+public class GlucoSuccessApplication extends Application
 {
 
     public static final String PERMISSION_NOTIFICATIONS = "SampleApp.permission.NOTIFICATIONS";
@@ -23,7 +23,7 @@ public class SampleApplication extends Application
         // Init RS Singleton
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
-        ResearchStack.init(this, new SampleResearchStack());
+        ResearchStack.init(this, new GlucoSuccessResearchStack());
 
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
         // Init permission objects
